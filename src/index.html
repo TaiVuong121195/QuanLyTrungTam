@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CyberSoft Theme</title>
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" type = "text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round" type = "text/css">
+
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.css" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top container-fluid" id = "menu">
+  
+      <button class="navbar-toggler navbar-toggler-right" type = "button" data-toggle="collapse" data-target="#nav-content"><span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a href="index.html" class="navbar-brand">CyberSoft</a>
+      <div class="collapse navbar-collapse" id="nav-content">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item active">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="services.html" class="nav-link">Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a href="login.html" class="nav-link" data-toggle="modal" data-target="#loginModal">Log In</a>
+          </li>
+          <li class="nav-item">
+            <a href="signup.html" class="nav-link" data-toggle="modal" data-target="#signupModal">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    
+  </nav>
+
+  <!-- LOGIN MODAL -->
+    <div class="modal" id = "loginModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Login to your CyberSoft Account</h5>
+            <button class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <a href="#" class="btn btn-lg form-control btn-facebook text-white">Continue with Facebook</a>
+              <a href="#" class="btn btn-lg form-control btn-outline-dark">Continue with Google</a>
+            </div>
+
+            <div class="form-group input-group">
+              <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+              <input type="text" placeholder="Username" class="form-control">
+            </div>
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-danger btn-lg form-control" value="Login">
+                <p class="text-center">or<a href="#"> Forgot your password</a></p>
+            </div>
+          </form>
+          </div>
+          <div class="modal-footer">
+            <p>Don't have an account?<a href="#"> Sign up</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNUP MODAL -->
+      <div class="modal" id = "signupModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Sign Up and Start Leanring!</h5>
+              <button class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+            <form>
+              <div class="form-group input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                <input type="text" placeholder="Email" class="form-control">
+              </div>
+              <div class="form-group input-group">
+                <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                <input type="text" placeholder="Username" class="form-control">
+              </div>
+              <div class="form-group input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                <input type="password" placeholder="Password" class="form-control">
+              </div>
+              <div class="form-group">
+                <a href="#" class="btn btn-danger btn-lg form-control">Sign Up</a>
+              </div>
+            </form>
+            </div>
+            <div class="modal-footer">
+              <p>Already have an account?<a href="#">Login</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <!-- SHOWCASE SLIDER -->
+  <section id="showcase">
+      <div class="bg-video">
+          <video  class="bg-video" autoplay muted loop>
+              <source src = "img/Spacious.mp4" type = "video/mp4">
+              <source src = "img/Spacious.webm" type = "video/webm">
+              Your browser is not supported!
+              
+          </video>
+          
+          <div id="content">
+              <h1>Find the Best Courses</h1>
+              <p>All the top courses – from the best our teachers.</p>
+          </div>
+      </div>
+  </section>
+
+
+  <section id="home-icons" class="pt-5">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-4 m-auto text-center img-1">
+                <img src="img/img18.jpg" alt="/" class="img-fluid">
+              </div>
+              <div class="col-md-4 m-auto text-center img-2">
+                  <img src="img/img11.jpg" alt="/" class="img-fluid">
+                </div>
+                <div class="col-md-4 m-auto text-center img-3">
+                    <img src="img/img14.jpg" alt="/" class="img-fluid">
+                </div>
+        </div>
+      </div>
+  </section>
+
+
+
+    <!-- INFO SECTION -->
+    <section id="info" class="">
+      <div class="container">
+          <h1 class = "text-center mt-5   pb-3">Categories</h1>
+        <div class="row">
+          <div class="col-lg-3">
+            <img src="img/img2.jpg" alt="/" class="img-fluid">
+            <img src="img/img4.jpg" alt="/" class="img-fluid mt-3">
+          </div>
+          <div class="col-lg-6">
+              <img src="img/img20.jpg" alt="/" class="img-fluid">
+          </div>
+          <div class="col-lg-3">
+              <img src="img/img23.jpg" alt="/" class="img-fluid">
+            </div>
+        </div>
+        <div class="row mt-5 mb-5">
+            <div class="col-md-6 col-lg-3">
+                <img src="img/img39.jpg" alt="/" class="img-fluid">
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <img src="img/img22.jpg" alt="/" class="img-fluid">
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <img src="img/img42.jpg" alt="/" class="img-fluid">
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <img src="img/img19.jpg" alt="/" class="img-fluid">
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO PLAY SECTION -->
+  <section id="video-play">
+    <div class="dark-overlay">
+      <div class="row">
+        <div class="col">
+          <div class="container p-5">
+            <a
+              href="#"
+              class="video"
+              data-video="https://www.youtube.com/embed/HnwsG9a5riA"
+              data-toggle="modal"
+              data-target="#videoModal"
+            >
+              <i class="fa fa-play"></i>
+            </a>
+            <h1>See What We Do</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular courses-->
+  <section id="gallery" class="py-5">
+    <div class="container">
+        <h1 class = "text-center mt-4 pb-3">Popular Courses</h1>
+				<div class="row">
+
+            <div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="img/img20.jpg" class="img-responsive" alt="a" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-7">
+                                              <p>Design  Pattern</p>
+                                              <p class="price-text-color">
+                                                  Song Lê</p>
+                                             
+                                              <p>8165</p>
+                                              <p>3 giờ học</p>
+                                                <span>3545 luợt xem</span>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-5">
+                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="separator clear-left">
+                                            <p class="btn-add">
+                                                <i class="fa fa-sign-in"></i><a href="#" class="hidden-sm">Enroll</a></p>
+                                            <p class="btn-details">
+                                                <i class="fa fa-list"></i><a href="#" class="hidden-sm">Details</a></p>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="img/img43.jpg" class="img-responsive" alt="a" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-7">
+                                              <p>Design  Pattern</p>
+                                              <p class="price-text-color">
+                                                  Song Lê</p>
+                                             
+                                              <p>8165</p>
+                                              <p>3 giờ học</p>
+                                                <span>3545 luợt xem</span>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-5">
+                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="separator clear-left">
+                                            <p class="btn-add">
+                                                <i class="fa fa-sign-in"></i><a href="#" class="hidden-sm">Enroll</a></p>
+                                            <p class="btn-details">
+                                                <i class="fa fa-list"></i><a href="#" class="hidden-sm">Details</a></p>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="img/img4.jpg" class="img-responsive" alt="a" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-7">
+                                              <p>Design  Pattern</p>
+                                              <p class="price-text-color">
+                                                  Song Lê</p>
+                                             
+                                              <p>8165</p>
+                                              <p>3 giờ học</p>
+                                                <span>3545 luợt xem</span>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-5">
+                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="separator clear-left">
+                                            <p class="btn-add">
+                                                <i class="fa fa-sign-in"></i><a href="#" class="hidden-sm">Enroll</a></p>
+                                            <p class="btn-details">
+                                                <i class="fa fa-list"></i><a href="#" class="hidden-sm">Details</a></p>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="img/img2.jpg" class="img-responsive" alt="a" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-7">
+                                              <p>Design  Pattern</p>
+                                              <p class="price-text-color">
+                                                  Song Lê</p>
+                                             
+                                              <p>8165</p>
+                                              <p>3 giờ học</p>
+                                                <span>3545 luợt xem</span>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-5">
+                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="separator clear-left">
+                                            <p class="btn-add">
+                                                <i class="fa fa-sign-in"></i><a href="#" class="hidden-sm">Enroll</a></p>
+                                            <p class="btn-details">
+                                                <i class="fa fa-list"></i><a href="#" class="hidden-sm">Details</a></p>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER SECTION -->
+ <section id="newsletter" class="text-center p-5 bg-dark text-white">
+   <div class="container">
+     <div class="row">
+       <div class="col">
+         <h1>Signup For Our New Course</h1>
+         <form class="form-inline justify-content-center">
+           <label class="sr-only" for="name">Name</label>
+           <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Enter Name">
+
+           <label class="sr-only" for="email">Email</label>
+           <input type="email" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Enter Email">
+           <button class="btn btn-outline-primary" type="submit">Submit</button>
+         </form>
+       </div>
+     </div>
+   </div>
+ </section>
+
+ <footer id="main-footer" class="text-center p-4">
+   <div class="container">
+     <div class="row">
+       <div class="col">
+         <p>Copyright 2017 &copy; CyberSoft</p>
+       </div>
+     </div>
+   </div>
+ </footer>
+
+  <!-- VIDEO MODAL -->
+  <div class="modal fade" id="videoModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button class="close" data-dismiss="modal"><span>&times;</span></button>
+          <iframe src="" height="350" width="100%" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
