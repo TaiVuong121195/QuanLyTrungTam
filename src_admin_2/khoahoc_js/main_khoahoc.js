@@ -19,7 +19,7 @@ function ThemKhoaHoc(){
     var hinhanh = DomID("hinhanh").value;
     var nguoitao = DomID("nguoitao").value;
    
-    var khoahoc = new KhoaHoc(makhoahoc, tenkhoahoc, luotxem, mota, hinhanh, nguoitao);
+    var khoahoc = new KhoaHoc(makhoahoc, tenkhoahoc,  hinhanh, luotxem);
 
     danhSachKhoaHoc.ThemKhoaHoc(khoahoc);
     CapNhatDanhSachKhoaHoc(danhSachKhoaHoc);

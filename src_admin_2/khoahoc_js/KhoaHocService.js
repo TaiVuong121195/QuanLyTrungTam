@@ -9,6 +9,7 @@ function KhoaHocService(){
 			success: function(ketqua){
 				var DSKH = JSON.stringify(ketqua);
 				localStorage.setItem("DanhSachKH",DSKH);
+				
 			},
 			error: function(parsedjson, textStatus, errorThown){
 				console.log();

@@ -7,7 +7,7 @@ function NguoiDungService(){
 			url: urlApi,
 			success: function(ketqua){
 				var DSND = JSON.stringify(ketqua);
-				console.log(ketqua);
+				
 				localStorage.setItem("DanhSachND",DSND);
 			},
 			error: function(parsedjson, textStatus, errorThown){
@@ -22,8 +22,6 @@ function NguoiDungService(){
 			url: urlApi,
             data:nguoidung,
 			success: function(ketqua){
-				console.log(ketqua);
-				
 			},
 			error: function (xhr, ajaxOptions, thrownError) {
 				console.log(xhr.status);
@@ -36,8 +34,28 @@ function NguoiDungService(){
     {
         var urlAPI = `http://sv.myclass.vn/api/QuanLyTrungTam/XoaNguoiDung/${id}`;
         $.ajax({
-			type:"DELETE",
-            url: urlAPI,
+			type:'DELETE',
+			url: urlAPI,
+			contentType:"application/json",
+            success: function(ketqua)
+            {
+                console.log(ketqua);
+            },
+            error:function(error)
+            {
+                console.log();
+            }
+        });     
+	}
+	
+	this.CapNhatThongTinNguoiDung= function(nguoidung)
+    {
+        var urlAPI = `http://sv.myclass.vn/api/QuanLyTrungTam/CapNhatThongTinNguoiDung`;
+        $.ajax({
+			type:'PUT',
+			url: urlAPI,
+			contentType:"application/json",
+			data:nguoidung,
             success: function(ketqua)
             {
                 console.log(ketqua);

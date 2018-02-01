@@ -18,6 +18,7 @@ function DanhSachNguoiDung(){
             var ndUpdate = this.DSND[i];
             if(ndCapNhat.TaiKhoan == ndUpdate.TaiKhoan){
                 ndUpdate.HoTen = ndCapNhat.HoTen;
+                ndUpdate.MatKhau = ndCapNhat.MatKhau;
                 ndUpdate.Email = ndCapNhat.Email;
                 ndUpdate.SoDT = ndCapNhat.SoDT;
                 ndUpdate.MaLoaiNguoiDung = ndCapNhat.MaLoaiNguoiDung;
