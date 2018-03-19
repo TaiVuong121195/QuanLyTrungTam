@@ -3,6 +3,7 @@
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,407 +11,671 @@
   <title>CyberSoft Theme</title>
 
   <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" type = "text/css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round" type = "text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round" type="text/css">
 
-  <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="resources/css/font-awesome.min.css">
+  <!-- Favicon-->
+  <link rel="shortcut icon" type="image/png" href="resources/img/favicon.png">
 
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="resources/css/bootstrap.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.css" />
-  <link rel="stylesheet" href="css/style.css">
+  <!-- CSS-->
+  <link rel="stylesheet" href="resources/css/style.css">
+
+  <!-- Animate CSS -->
+
+  <link rel="stylesheet" href="resources/css/animate.css">
+
+
+  <!-- Login-Register : CSS và JS -->
+  <link rel="stylesheet" href="resources/css/login-register.css">
+  <script src="resources/js/login-register.js" type="text/javascript"></script>
+
+
 </head>
+
 <body>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top container-fluid" id = "menu">
-  
-      <button class="navbar-toggler navbar-toggler-right" type = "button" data-toggle="collapse" data-target="#nav-content"><span class="navbar-toggler-icon"></span>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top container-fluid" id="menu">
+    <div class="container-fluid">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#nav-content">
+        <span class="navbar-toggler-icon"></span>
       </button>
 
-      <a href="index.html" class="navbar-brand">CyberSoft</a>
+      <a href="index.html" class="navbar-brand">Học trực tuyến</a>
       <div class="collapse navbar-collapse" id="nav-content">
         <ul class="navbar-nav text-uppercase ml-auto">
+
           <li class="nav-item active">
-            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.html" class="nav-link">Trang chủ</a>
           </li>
           <li class="nav-item">
-            <a href="about.html" class="nav-link">About Us</a>
+            <a href="mycourses.html" class="nav-link">Khóa học</a>
           </li>
           <li class="nav-item">
-            <a href="services.html" class="nav-link">Services</a>
+            <a class="btn nav-link" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();" id="TenChuTK">
+              <i class="fa fa-sign-in"></i> Đăng nhập</a>
           </li>
           <li class="nav-item">
-            <a href="contact.html" class="nav-link">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a href="login.html" class="nav-link" data-toggle="modal" data-target="#loginModal">Log In</a>
-          </li>
-          <li class="nav-item">
-            <a href="signup.html" class="nav-link" data-toggle="modal" data-target="#signupModal">Sign Up</a>
-          </li>
-        </ul>
+            <a class="btn nav-link" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">
+              <i class="fa fa-user-plus"></i> Đăng ký</a>
       </div>
-    
+      </li>
+
+
+      </ul>
+    </div>
+    </div>
   </nav>
 
-  <!-- LOGIN MODAL -->
-    <div class="modal" id = "loginModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Login to your CyberSoft Account</h5>
-            <button class="close" data-dismiss="modal">&times;</button>
-          </div>
-          <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <a href="#" class="btn btn-lg form-control btn-facebook text-white">Continue with Facebook</a>
-              <a href="#" class="btn btn-lg form-control btn-outline-dark">Continue with Google</a>
-            </div>
 
-            <div class="form-group input-group">
-              <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-              <input type="text" placeholder="Username" class="form-control">
+  <div class="modal fade login" id="loginModal">
+    <div class="modal-dialog login animated">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Đăng nhập với</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+        </div>
+        <div class="modal-body">
+          <div class="box">
+            <div class="content">
+              <div class="social">
+                <a class="circle github" href="/auth/github">
+                  <i class="fa fa-github fa-fw"></i>
+                </a>
+                <a id="google_login" class="circle google" href="/auth/google_oauth2">
+                  <i class="fa fa-google-plus fa-fw"></i>
+                </a>
+                <a id="facebook_login" class="circle facebook" href="/auth/facebook">
+                  <i class="fa fa-facebook fa-fw"></i>
+                </a>
+              </div>
+              <div class="division">
+                <div class="line l"></div>
+                <span>or</span>
+                <div class="line r"></div>
+              </div>
+              <div class="error"></div>
+              <div class="form loginBox">
+                <form method="post" action="/login" accept-charset="UTF-8">
+                  <input id="taikhoan_dn" class="form-control" type="text" placeholder="Tài khoản" name="email">
+                  <input id="matkhau_dn" class="form-control" type="password" placeholder="Mật khẩu" name="password">
+                  <input class="btn btn-default btn-login" type="button" value="Đăng nhập" id="btnDangNhap">
+                </form>
+              </div>
             </div>
-            <div class="form-group input-group">
-                <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="submit" class="btn btn-danger btn-lg form-control" value="Login">
-                <p class="text-center">or<a href="#"> Forgot your password</a></p>
-            </div>
-          </form>
           </div>
-          <div class="modal-footer">
-            <p>Don't have an account?<a href="#"> Sign up</a></p>
+          <div class="box">
+            <div class="content registerBox" style="display:none;">
+              <div class="form">
+                <form>
+                  <div class="form-group input-group">
+                    <input type="text" placeholder="Tài khoản" class="form-control" id="TK">
+                  </div>
+                  <div class="form-group input-group">
+                    <input type="password" placeholder="Mật khẩu " class="form-control" id="MK">
+                  </div>
+
+                  <div class="form-group input-group">
+                    <input type="text" placeholder="Họ tên" class="form-control" id="HT">
+                  </div>
+
+                  <div class="form-group input-group">
+                    <input type="email" placeholder="Email" class="form-control" id="EM">
+                  </div>
+
+                  <div class="form-group input-group">
+                    <input type="number" placeholder="Số điện thoại" class="form-control" id="SDT">
+                  </div>
+                </form>
+                <div class="form-group">
+                  <button class="btn btn-danger  btn-login" id="btnDangKy">Đăng ký</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="forgot login-footer">
+            <span>Bạn chưa có tài khoản ?
+              <a href="javascript: showRegisterForm();">Tạo ngay</a>
+            </span>
+          </div>
+          <div class="forgot register-footer" style="display:none">
+            <span>Bạn đã có tài khoản ?</span>
+            <a href="javascript: showLoginForm();">Đăng nhập</a>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- SIGNUP MODAL -->
-      <div class="modal" id = "signupModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Sign Up and Start Leanring!</h5>
-              <button class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-            <form>
-              <div class="form-group input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                <input type="text" placeholder="Email" class="form-control">
-              </div>
-              <div class="form-group input-group">
-                <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                <input type="text" placeholder="Username" class="form-control">
-              </div>
-              <div class="form-group input-group">
-                  <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
-                <input type="password" placeholder="Password" class="form-control">
-              </div>
-              <div class="form-group">
-                <a href="#" class="btn btn-danger btn-lg form-control">Sign Up</a>
-              </div>
-            </form>
-            </div>
-            <div class="modal-footer">
-              <p>Already have an account?<a href="#">Login</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-  <!-- SHOWCASE SLIDER -->
+  <!-- Phần showcase carousel -->
   <section id="showcase">
-      <div class="bg-video">
-          <video  class="bg-video" autoplay muted loop>
-              <source src = "img/Spacious.mp4" type = "video/mp4">
-              <source src = "img/Spacious.webm" type = "video/webm">
-              Your browser is not supported!
-              
-          </video>
-          
-          <div id="content">
-              <h1>Find the Best Courses</h1>
-              <p>All the top courses – from the best our teachers.</p>
-          </div>
+    <div class="bg-video">
+      <video class="bg-video" autoplay muted loop>
+        <source src="resources/img/Spacious.mp4" type="video/mp4">
+        <source src="resources/img/Spacious.webm" type="video/webm"> Your browser is not supported!
+
+      </video>
+
+      <div id="content">
+        <h1 data-wow-duration="700ms" data-wow-delay="500ms" class="text-primary wow bounceInDown animated">Học lập trình online</h1>
+        <input type="search" class="form-control wow slideInLeft animated" id="tukhoa" onkeyup="TimKhoaHocAjax();" placeholder="Tìm kiếm khóa học"
+          data-wow-duration="1000ms">
+        <div class="list-group" id="result">
+
+        </div>
       </div>
+    </div>
   </section>
 
 
-  <section id="home-icons" class="pt-5">
-      <div class="container">
-        <div class="row">
-            <div class="col-md-4 m-auto text-center img-1">
-                <img src="img/img18.jpg" alt="/" class="img-fluid">
+  <section id="muctieu" class="pt-5">
+    <div class="container">
+      <div class="row">
+        <div class="flip-container col-md-4 m-auto text-center img-1" ontouchstart="this.classList.toggle('hover');">
+          <div class="flipper">
+            <div class="front">
+              <a href="#">
+                <img src="resources/img/img97.jpg" alt="/" class="img-fluid image">
+              </a>
+            </div>
+            <div class="back">
+              <div class="mota mt-5">
+                <h3 class="text-primary">Khóa học bắt đầu</h3>
+                <p>23 khóa học</p>
               </div>
-              <div class="col-md-4 m-auto text-center img-2">
-                  <img src="img/img11.jpg" alt="/" class="img-fluid">
-                </div>
-                <div class="col-md-4 m-auto text-center img-3">
-                    <img src="img/img14.jpg" alt="/" class="img-fluid">
-                </div>
+            </div>
+          </div>
         </div>
+
+      
+        <div class="flip-container col-md-4 m-auto text-center img-2" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="front">
+                <a href="#">
+                  <img src="resources/img/img98.jpg" alt="/" class="img-fluid image">
+                </a>
+              </div>
+              <div class="back">
+                <div class="mota mt-5">
+                  <h3 class="text-primary">Khóa học cấp độ trung bình</h3>
+                  <p>15 khóa học</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-container col-md-4 m-auto text-center img-3" ontouchstart="this.classList.toggle('hover');">
+              <div class="flipper">
+                <div class="front">
+                  <a href="#">
+                    <img src="resources/img/img99.jpg" alt="/" class="img-fluid image">
+                  </a>
+                </div>
+                <div class="back">
+                  <div class="mota mt-5">
+                    <h3 class="text-primary">Khóa học cấp độ nâng cao</h3>
+                    <p>8 khóa học</p>
+                  </div>
+                </div>
+              </div>
+            </div>
       </div>
+    </div>
   </section>
 
 
 
-    <!-- INFO SECTION -->
-    <section id="info" class="">
-      <div class="container">
-          <h1 class = "text-center mt-5   pb-3">Categories</h1>
-        <div class="row">
-          <div class="col-lg-3">
-            <img src="img/img2.jpg" alt="/" class="img-fluid">
-            <img src="img/img4.jpg" alt="/" class="img-fluid mt-3">
+  <!-- DANH MỤC KHÓA HỌC -->
+  <section id="info" class="">
+    <div class="container">
+      <h1 class="text-center mt-5 pb-3 text-primary">Danh mục </h1>
+      <div class="row">
+        <div class="col-lg-3 thumbnail text-center">
+          <img src="resources/img/img1.jpg" alt="/" class="img-fluid image">
+          <img src="resources/img/img2.jpg" alt="/" class="img-fluid mt-3 image">
+          <div class="overlay">
+            <p class="text">Lập trình FrontEnd + BackEnd</p>
+            <a href="#" class="btn btn-success btn-1">Xem ngay</a>
           </div>
-          <div class="col-lg-6">
-              <img src="img/img20.jpg" alt="/" class="img-fluid">
-          </div>
-          <div class="col-lg-3">
-              <img src="img/img23.jpg" alt="/" class="img-fluid">
-            </div>
         </div>
-        <div class="row mt-5 mb-5">
-            <div class="col-md-6 col-lg-3">
-                <img src="img/img39.jpg" alt="/" class="img-fluid">
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <img src="img/img22.jpg" alt="/" class="img-fluid">
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <img src="img/img42.jpg" alt="/" class="img-fluid">
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <img src="img/img19.jpg" alt="/" class="img-fluid">
-            </div>
+        <div class="col-lg-6 thumbnail text-center">
+          <img src="resources/img/img3.jpg" alt="/" class="img-fluid image">
+          <div class="overlay">
+            <p class="text">Thiết kế web</p>
+            <a href="#" class="btn btn-success btn-2">Xem ngay</a>
+          </div>
+        </div>
+        <div class="col-lg-3 thumbnail text-center">
+          <img src="resources/img/img23.jpg" alt="/" class="img-fluid image">
+          <div class="overlay">
+            <p class="text">Testing</p>
+            <a href="#" class="btn btn-success btn-3">Xem ngay</a>
+          </div>
         </div>
       </div>
-    </section>
+      <div class="row mt-5 mb-5">
+        <div class="col-md-6 col-lg-3 thumbnail text-center">
+          <img src="resources/img/img39.jpg" alt="/" class="img-fluid image">
+          <div class="overlay">
+            <p class="text">Tư duy lập trình</p>
+            <a href="#" class="btn btn-success btn-4">Xem ngay</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 thumbnail text-center">
+          <img src="resources/img/img22.jpg" alt="/" class="img-fluid image">
+          <div class="overlay">
+            <p class="text">Lập trình Back End</p>
+            <a href="#" class="btn btn-success btn-5">Xem ngay</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 thumbnail text-center">
+          <img src="resources/img/img42.jpg" alt="/" class="img-fluid image">
+          <div class="overlay">
+            <p class="text">Lập trình Di Động</p>
+            <a href="#" class="btn btn-success btn-6">Xem ngay</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 thumbnail text-center">
+          <img src="resources/img/img19.jpg" alt="/" class="img-fluid image">
+          <div class="overlay">
+            <p class="text">Lập trình Front End</p>
+            <a href="#" class="btn btn-success btn-7">Xem ngay</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- VIDEO PLAY SECTION -->
+  <!-- Phần video giới thiệu -->
   <section id="video-play">
     <div class="dark-overlay">
       <div class="row">
         <div class="col">
           <div class="container p-5">
-            <a
-              href="#"
-              class="video"
-              data-video="https://www.youtube.com/embed/HnwsG9a5riA"
-              data-toggle="modal"
-              data-target="#videoModal"
-            >
+            <a href="#" class="video" data-video="https://www.youtube.com/embed/HnwsG9a5riA" data-toggle="modal" data-target="#videoModal">
               <i class="fa fa-play"></i>
             </a>
-            <h1>See What We Do</h1>
+            <h1 class="text-primary">Giới thiệu về chúng tôi</h1>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Popular courses-->
+  <!-- Các khóa học phổ biến-->
   <section id="gallery" class="py-5">
     <div class="container">
-        <h1 class = "text-center mt-4 pb-3">Popular Courses</h1>
-				<div class="row">
+      <h1 class="text-center mt-4 pb-3 text-primary">Các khóa học phổ biến</h1>
+      <div class="row">
 
-            <div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="col-item">
-                                    <div class="photo">
-                                        <img src="img/img20.jpg" class="img-responsive" alt="a" />
-                                    </div>
-                                    <div class="info">
-                                        <div class="row">
-                                            <div class="price col-md-7">
-                                              <p>Design  Pattern</p>
-                                              <p class="price-text-color">
-                                                  Song Lê</p>
-                                             
-                                              <p>8165</p>
-                                              <p>3 giờ học</p>
-                                                <span>3545 luợt xem</span>
-                                            </div>
-                                            <div class="rating hidden-sm col-md-5">
-                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                                </i><i class="fa fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="separator clear-left">
-                                            <p class="btn-add">
-                                                <i class="fa fa-sign-in"></i><a href="#" class="hidden-sm">Enroll</a></p>
-                                            <p class="btn-details">
-                                                <i class="fa fa-list"></i><a href="#" class="hidden-sm">Details</a></p>
-                                        </div>
-                                        <div class="clearfix">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="col-item">
-                                    <div class="photo">
-                                        <img src="img/img43.jpg" class="img-responsive" alt="a" />
-                                    </div>
-                                    <div class="info">
-                                        <div class="row">
-                                            <div class="price col-md-7">
-                                              <p>Design  Pattern</p>
-                                              <p class="price-text-color">
-                                                  Song Lê</p>
-                                             
-                                              <p>8165</p>
-                                              <p>3 giờ học</p>
-                                                <span>3545 luợt xem</span>
-                                            </div>
-                                            <div class="rating hidden-sm col-md-5">
-                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                                </i><i class="fa fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="separator clear-left">
-                                            <p class="btn-add">
-                                                <i class="fa fa-sign-in"></i><a href="#" class="hidden-sm">Enroll</a></p>
-                                            <p class="btn-details">
-                                                <i class="fa fa-list"></i><a href="#" class="hidden-sm">Details</a></p>
-                                        </div>
-                                        <div class="clearfix">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="col-item">
-                                    <div class="photo">
-                                        <img src="img/img4.jpg" class="img-responsive" alt="a" />
-                                    </div>
-                                    <div class="info">
-                                        <div class="row">
-                                            <div class="price col-md-7">
-                                              <p>Design  Pattern</p>
-                                              <p class="price-text-color">
-                                                  Song Lê</p>
-                                             
-                                              <p>8165</p>
-                                              <p>3 giờ học</p>
-                                                <span>3545 luợt xem</span>
-                                            </div>
-                                            <div class="rating hidden-sm col-md-5">
-                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                                </i><i class="fa fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="separator clear-left">
-                                            <p class="btn-add">
-                                                <i class="fa fa-sign-in"></i><a href="#" class="hidden-sm">Enroll</a></p>
-                                            <p class="btn-details">
-                                                <i class="fa fa-list"></i><a href="#" class="hidden-sm">Details</a></p>
-                                        </div>
-                                        <div class="clearfix">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="col-item">
-                                    <div class="photo">
-                                        <img src="img/img2.jpg" class="img-responsive" alt="a" />
-                                    </div>
-                                    <div class="info">
-                                        <div class="row">
-                                            <div class="price col-md-7">
-                                              <p>Design  Pattern</p>
-                                              <p class="price-text-color">
-                                                  Song Lê</p>
-                                             
-                                              <p>8165</p>
-                                              <p>3 giờ học</p>
-                                                <span>3545 luợt xem</span>
-                                            </div>
-                                            <div class="rating hidden-sm col-md-5">
-                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                                </i><i class="fa fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="separator clear-left">
-                                            <p class="btn-add">
-                                                <i class="fa fa-sign-in"></i><a href="#" class="hidden-sm">Enroll</a></p>
-                                            <p class="btn-details">
-                                                <i class="fa fa-list"></i><a href="#" class="hidden-sm">Details</a></p>
-                                        </div>
-                                        <div class="clearfix">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
+        <!-- Wrapper for slides -->
+        <div class="row ml-4">
+          <div class="col-sm-3">
+            <div class="col-item">
+              <div class="photo">
+                <img src="resources/img/img18.jpg" class="img-responsive" alt="a" />
+              </div>
+              <div class="info">
+                <div class="row">
+                  <div class="price col-md-6">
+                    <p>Unreal</p>
+                    <p class="price-text-color">
+                      Song Lê</p>
 
-                    
+                    <p>3 giờ học</p>
+                    <span>3545 luợt xem</span>
+                  </div>
+                  <div class="rating hidden-sm col-md-6">
+
+                    <i class="price-text-color fa fa-star">
+                    </i>
+                    <i class="price-text-color fa fa-star"></i>
+                    <i class="price-text-color fa fa-star">
+                    </i>
+                    <i class="fa fa-star"></i>
+                  </div>
                 </div>
+
+              </div>
             </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="col-item">
+              <div class="photo">
+                <img src="resources/img/img12.jpg" class="img-responsive" alt="a" />
+              </div>
+              <div class="info">
+                <div class="row">
+                  <div class="price col-md-6">
+                    <p>C Program</p>
+                    <p class="price-text-color">
+                      Song Lê</p>
+
+                    <p>3 giờ học</p>
+                    <span>3545 luợt xem</span>
+                  </div>
+                  <div class="rating hidden-sm col-md-6">
+
+                    <i class="price-text-color fa fa-star">
+                    </i>
+                    <i class="price-text-color fa fa-star"></i>
+                    <i class="price-text-color fa fa-star">
+                    </i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="col-item">
+              <div class="photo">
+                <img src="resources/img/img16.jpg" class="img-responsive" alt="a" />
+              </div>
+              <div class="info">
+                <div class="row">
+                  <div class="price col-md-6">
+                    <p>React</p>
+                    <p class="price-text-color">
+                      Song Lê</p>
+
+                    <p>3 giờ học</p>
+                    <span>3545 luợt xem</span>
+                  </div>
+                  <div class="rating hidden-sm col-md-6">
+
+                    <i class="price-text-color fa fa-star">
+                    </i>
+                    <i class="price-text-color fa fa-star"></i>
+                    <i class="price-text-color fa fa-star">
+                    </i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="col-item">
+              <div class="photo">
+                <img src="resources/img/img14.jpg" class="img-responsive" alt="a" />
+              </div>
+              <div class="info">
+                <div class="row">
+                  <div class="price col-md-6">
+                    <p>Big data</p>
+                    <p class="price-text-color">
+                      Song Lê</p>
+
+                    <p>3 giờ học</p>
+                    <span>3545 luợt xem</span>
+                  </div>
+                  <div class="rating hidden-sm col-md-6">
+
+                    <i class="price-text-color fa fa-star">
+                    </i>
+                    <i class="price-text-color fa fa-star"></i>
+                    <i class="price-text-color fa fa-star">
+                    </i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="row mt-5">
+        <a href="mycourses.html" class="btn btn-outline-primary mx-auto">Xem toàn bộ</a>
+      </div>
     </div>
   </section>
 
-  <!-- NEWSLETTER SECTION -->
- <section id="newsletter" class="text-center p-5 bg-dark text-white">
-   <div class="container">
-     <div class="row">
-       <div class="col">
-         <h1>Signup For Our New Course</h1>
-         <form class="form-inline justify-content-center">
-           <label class="sr-only" for="name">Name</label>
-           <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Enter Name">
 
-           <label class="sr-only" for="email">Email</label>
-           <input type="email" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Enter Email">
-           <button class="btn btn-outline-primary" type="submit">Submit</button>
-         </form>
-       </div>
-     </div>
-   </div>
- </section>
 
- <footer id="main-footer" class="text-center p-4">
-   <div class="container">
-     <div class="row">
-       <div class="col">
-         <p>Copyright 2017 &copy; CyberSoft</p>
-       </div>
-     </div>
-   </div>
- </footer>
+  <!-- AUTHORS -->
+  <section id="authors" class="my-5 text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="info-header mb-5">
+            <h1 class="text-primary pb-3">
+              Giảng Viên
+            </h1>
+            <p class="lead pb-3">
+              Những giảng viên nhiều năm kinh nghiệm, tâm huyết
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="../src/resources/img/song.png" alt="" class="img-fluid rounded-circle w-50 mb-3">
+              <h3>Song Lê</h3>
+              <h5 class="text-muted">CEO & Founder</h5>
+              <p>Là lập trình viên với hơn 10 năm kinh nghiệm. Với những kinh nghiệm trong nghề, anh mong muốn đào tạo ra những
+                lập trình viên tài năng</p>
+              <div class="d-flex flex-row justify-content-center">
+                <div class="p-4">
+                  <a href="#">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="#">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="#">
+                    <i class="fa fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="../src/resources/img/khai.jpg" alt="" class="img-fluid rounded-circle w-50 mb-3">
+              <h3>Khải</h3>
+              <h5 class="text-muted">LTV & Mentor</h5>
+              <p>Là lập trình viên hơn 5 năm kinh nghiệm, anh là người có kiến thức rất tốt. Với đam mê của mình, anh ấy rất
+                tận tâm trong việc giảng dạy học viên</p>
+              <div class="d-flex flex-row justify-content-center">
+                <div class="p-4">
+                  <a href="#">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="#">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="#">
+                    <i class="fa fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="../src/resources/img/person3.jpg" alt="" class="img-fluid rounded-circle w-50 mb-3">
+              <h3>John Doe</h3>
+              <h5 class="text-muted">Editor</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae molestiae alias expedita quae esse ut.</p>
+              <div class="d-flex flex-row justify-content-center">
+                <div class="p-4">
+                  <a href="#">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="#">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="#">
+                    <i class="fa fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="../src/resources/img/person4.jpg" alt="" class="img-fluid rounded-circle w-50 mb-3">
+              <h3>Kevin Swanson</h3>
+              <h5 class="text-muted">Designer</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae molestiae alias expedita quae esse ut.</p>
+              <div class="d-flex flex-row justify-content-center">
+                <div class="p-4">
+                  <a href="#">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="#">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="#">
+                    <i class="fa fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card p-4">
+            <div class="card-body">
+              <h4>Thông tin liên lạc</h4>
+              <p>Để biết thêm thông tin chi tiết, vui lòng liên hệ</p>
+              <h4>Địa chỉ</h4>
+              <p>459 Đường Sư Vạn Hạnh, Hồ Chí Minh</p>
+              <h4>Email</h4>
+              <p>cybersoft@test.com</p>
+              <h4>Điện thoại</h4>
+              <p>(555) 555 5555</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card p-4">
+            <div class="card-body">
+              <h3 class="text-center">Liên hệ với chúng tôi</h3>
+              <hr>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Họ">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Tên">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Email">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Số điện thoại">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <textarea class="form-control" placeholder="Nội dung"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <input type="submit" class="btn btn-outline-danger btn-block">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <footer id="main-footer" class="text-center p-4">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p>Copyright 2017 &copy; CyberSoft</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+ 
 
   <!-- VIDEO MODAL -->
   <div class="modal fade" id="videoModal">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body">
-          <button class="close" data-dismiss="modal"><span>&times;</span></button>
+          <button class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
           <iframe src="" height="350" width="100%" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </div>
   </div>
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
+
+  
+
+  <script src="resources/js/jquery.min.js" type="text/javascript"></script>
+  <script src="resources/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+  <script src="resources/js/popper.min.js" type="text/javascript"></script>
+  <script src="resources/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="resources/js/main.js" type="text/javascript"></script>
+  <script src="vendors/taikhoan_js/DangNhapService.js" type="text/javascript"></script>
+  <script src="vendors/taikhoan_js/DangKyService.js" type="text/javascript"></script>
+  <script src="vendors/taikhoan_js/ThongTinService.js" type="text/javascript"></script>
+  <script src="vendors/taikhoan_js/main.js" type="text/javascript"></script>
+
+
 </body>
+
 </html>
